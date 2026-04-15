@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Sri Yoga Classes Near Me – Find a Certified Teacher | SSSY</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════ RESET & TOKENS ═══════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#e8600a;
+  --orange-dark:#c44f00;
+  --orange-light:#fff3ec;
+  --orange-mid:#ff7722;
+  --white:#ffffff;
+  --offwhite:#f8f8f8;
+  --gray1:#f2f2f2;
+  --gray2:#e0e0e0;
+  --gray3:#bdbdbd;
+  --gray4:#757575;
+  --gray5:#424242;
+  --ink:#1a1a1a;
+  --green:#2e7d32;
+  --green-light:#e8f5e9;
+  --gold:#f59e0b;
+  --shadow:0 2px 8px rgba(0,0,0,.08);
+  --shadow-md:0 4px 20px rgba(0,0,0,.10);
+  --radius:10px;
+  --nav-h:64px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--offwhite);color:var(--ink);overflow-x:hidden;font-size:14px}
+a{text-decoration:none;color:inherit}
+button{font-family:'Inter',sans-serif;cursor:pointer}
+input,select,textarea{font-family:'Inter',sans-serif}
+ul{list-style:none}
+
+/* ═══════ NAV ═══════ */
+nav{
+  position:sticky;top:0;z-index:200;height:var(--nav-h);
+  background:#fff;border-bottom:1px solid var(--gray2);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;box-shadow:var(--shadow);
+}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-icon{width:36px;height:36px;border-radius:8px;background:var(--orange);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.nav-logo-text{font-weight:700;font-size:1rem;color:var(--ink);line-height:1.2}
+.nav-logo-sub{font-size:.65rem;color:var(--orange);font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.nav-mid{flex:1;max-width:480px;margin:0 2rem}
+.nav-search{display:flex;align-items:center;border:1.5px solid var(--gray2);border-radius:30px;overflow:hidden;background:#fff;transition:border-color .2s}
+.nav-search:focus-within{border-color:var(--orange)}
+.nav-search input{flex:1;border:none;outline:none;padding:8px 16px;font-size:.85rem;color:var(--ink)}
+.nav-search button{background:var(--orange);color:#fff;border:none;padding:9px 18px;font-size:.82rem;font-weight:600;white-space:nowrap;transition:background .2s}
+.nav-search button:hover{background:var(--orange-dark)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.btn-outline{border:1.5px solid var(--gray2);background:#fff;color:var(--ink);border-radius:30px;padding:7px 18px;font-size:.83rem;font-weight:600;transition:all .2s}
+.btn-outline:hover{border-color:var(--orange);color:var(--orange)}
+.btn-orange{background:var(--orange);color:#fff;border:none;border-radius:30px;padding:8px 20px;font-size:.83rem;font-weight:600;transition:background .2s}
+.btn-orange:hover{background:var(--orange-dark)}
+
+/* hamburger */
+.hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;border-bottom:1px solid var(--gray2);padding:16px 5%;flex-direction:column;gap:3px;z-index:199;box-shadow:var(--shadow-md)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:11px 0;font-size:.95rem;font-weight:500;border-bottom:1px solid var(--gray1)}
+.mobile-menu-actions{display:flex;gap:8px;margin-top:12px}
+.mobile-menu-actions button{flex:1;padding:11px;font-size:.85rem}
+
+/* ═══════ HERO ═══════ */
+.hero{background:linear-gradient(135deg,var(--orange) 0%,#ff8c38 50%,var(--orange-mid) 100%);padding:48px 5% 0;color:#fff;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-80px;top:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.06);pointer-events:none}
+.hero::after{content:'';position:absolute;right:80px;bottom:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none}
+
+.hero-inner{max-width:680px;position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.2rem}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.2;margin-bottom:1rem}
+.hero-stats-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.6rem;font-size:.82rem;font-weight:500;color:rgba(255,255,255,.9)}
+.hero-stat-pill{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.15);border-radius:20px;padding:5px 12px}
+
+/* Search bar */
+.hero-search-box{background:#fff;border-radius:12px;display:flex;align-items:stretch;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.15);margin-bottom:0}
+.hs-field{display:flex;align-items:center;gap:10px;padding:0 18px;flex:1}
+.hs-field svg{color:var(--gray3);flex-shrink:0}
+.hs-field input{border:none;outline:none;font-size:.95rem;color:var(--ink);width:100%;padding:14px 0}
+.hs-field input::placeholder{color:var(--gray3)}
+.hs-divider{width:1px;background:var(--gray2);margin:10px 0;flex-shrink:0}
+.mode-toggle{display:flex;align-items:center;gap:0;padding:0 6px}
+.mode-btn{border:none;background:transparent;padding:7px 14px;font-size:.82rem;font-weight:600;color:var(--gray4);border-radius:8px;transition:all .2s;white-space:nowrap}
+.mode-btn.active{background:var(--orange-light);color:var(--orange)}
+.hs-btn{background:var(--orange);color:#fff;border:none;padding:0 28px;font-size:.95rem;font-weight:700;transition:background .2s;border-radius:0}
+.hs-btn:hover{background:var(--orange-dark)}
+
+/* Rating proof strip */
+.hero-proof{background:rgba(255,255,255,.12);border-top:1px solid rgba(255,255,255,.15);margin-top:20px;padding:14px 0;display:flex;align-items:center;gap:24px;font-size:.8rem;color:rgba(255,255,255,.9)}
+.proof-faces{display:flex}
+.proof-face{width:28px;height:28px;border-radius:50%;border:2px solid #fff;margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700}
+.proof-face:first-child{margin-left:0}
+.proof-stars{color:#ffd700;font-size:.85rem}
+.proof-sep{width:1px;height:20px;background:rgba(255,255,255,.2)}
+
+/* ═══════ BREADCRUMB ═══════ */
+.breadcrumb{background:#fff;padding:10px 5%;border-bottom:1px solid var(--gray2);font-size:.78rem;color:var(--gray4);display:flex;align-items:center;gap:6px}
+.breadcrumb a{color:var(--orange)}
+.breadcrumb span{color:var(--gray3)}
+
+/* ═══════ MAIN LAYOUT ═══════ */
+.main-layout{display:grid;grid-template-columns:260px 1fr;gap:24px;padding:24px 5%;align-items:start;max-width:1300px;margin:0 auto}
+
+/* ═══════ FILTER SIDEBAR ═══════ */
+.filter-sidebar{background:#fff;border-radius:var(--radius);border:1px solid var(--gray2);padding:0;position:sticky;top:calc(var(--nav-h) + 16px);overflow:hidden}
+.filter-sidebar-header{padding:16px 20px;border-bottom:1px solid var(--gray2);display:flex;align-items:center;justify-content:space-between}
+.filter-sidebar-header h3{font-size:.95rem;font-weight:700}
+.filter-clear-all{font-size:.78rem;color:var(--orange);font-weight:600;background:none;border:none;cursor:pointer}
+.filter-section{padding:16px 20px;border-bottom:1px solid var(--gray2)}
+.filter-section:last-child{border-bottom:none}
+.filter-section-title{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--gray4);margin-bottom:12px}
+
+/* Price range */
+.price-range-display{display:flex;justify-content:space-between;margin-bottom:8px;font-size:.83rem;font-weight:600}
+.range-slider{-webkit-appearance:none;appearance:none;width:100%;height:3px;border-radius:3px;outline:none;background:linear-gradient(to right,var(--orange) 0%,var(--orange) 60%,var(--gray2) 60%)}
+.range-slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--orange);box-shadow:0 1px 6px rgba(232,96,10,.4);cursor:pointer;border:2px solid #fff}
+
+/* Checkboxes */
+.filter-option{display:flex;align-items:center;gap:10px;margin-bottom:8px;cursor:pointer;font-size:.86rem;user-select:none}
+.filter-option input[type=checkbox]{display:none}
+.fcheck{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--gray3);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.filter-option input:checked + .fcheck{background:var(--orange);border-color:var(--orange)}
+.filter-option input:checked + .fcheck::after{content:'✓';font-size:.65rem;color:#fff;font-weight:700}
+.foption-count{margin-left:auto;font-size:.74rem;color:var(--gray3)}
+
+/* Radio rating */
+.rating-option{display:flex;align-items:center;gap:8px;margin-bottom:8px;cursor:pointer;font-size:.85rem;padding:5px 0}
+.rating-option input[type=radio]{accent-color:var(--orange);width:15px;height:15px}
+.rating-stars{color:var(--gold);font-size:.82rem}
+
+/* ═══════ RESULTS AREA ═══════ */
+.results-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px}
+.results-title{font-size:1.05rem;font-weight:700}
+.results-title span{color:var(--gray4);font-weight:400;font-size:.9rem}
+.sort-row{display:flex;align-items:center;gap:8px;font-size:.83rem;color:var(--gray4)}
+.sort-select{border:1px solid var(--gray2);border-radius:8px;padding:7px 12px;font-size:.83rem;outline:none;background:#fff;color:var(--ink)}
+
+/* ═══════ TEACHER CARD (Superprof style) ═══════ */
+.teacher-list{display:flex;flex-direction:column;gap:16px}
+
+.teacher-card{background:#fff;border:1px solid var(--gray2);border-radius:var(--radius);display:flex;gap:0;transition:box-shadow .2s,border-color .2s;overflow:hidden}
+.teacher-card:hover{box-shadow:var(--shadow-md);border-color:var(--gray3)}
+
+.tc-photo{width:140px;flex-shrink:0;display:flex;align-items:stretch}
+.tc-photo-inner{width:100%;min-height:170px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;position:relative}
+.tc-avatar{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.9rem;font-weight:800;border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.tc-badge{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-size:.6rem;font-weight:700;padding:2px 9px;border-radius:10px;white-space:nowrap;letter-spacing:.04em}
+
+.tc-body{flex:1;padding:18px 20px;display:flex;flex-direction:column;gap:6px;border-left:1px solid var(--gray2)}
+.tc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.tc-name-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tc-name{font-weight:700;font-size:1rem;color:var(--ink)}
+.tc-city{font-size:.78rem;color:var(--gray4);display:flex;align-items:center;gap:3px}
+.tc-rating-block{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.tc-stars{color:var(--gold);font-size:.82rem}
+.tc-rating-num{font-weight:700;font-size:.9rem}
+.tc-reviews{font-size:.75rem;color:var(--gray4)}
+.tc-tagline{font-size:.88rem;color:var(--gray5);line-height:1.55;font-weight:400;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
+.tc-tag{background:var(--orange-light);color:var(--orange);font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:20px}
+.tc-footer-row{display:flex;align-items:center;justify-content:space-between;margin-top:4px;flex-wrap:wrap;gap:8px}
+.tc-price-block{display:flex;align-items:center;gap:8px}
+.tc-price{font-weight:700;font-size:1.1rem;color:var(--ink)}
+.tc-price-sub{font-size:.76rem;color:var(--gray4)}
+.tc-free{display:inline-flex;align-items:center;gap:4px;background:var(--green-light);color:var(--green);font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:20px}
+.tc-actions{display:flex;gap:8px}
+.btn-view{background:var(--orange);color:#fff;border:none;border-radius:8px;padding:9px 20px;font-size:.83rem;font-weight:700;transition:background .2s;white-space:nowrap}
+.btn-view:hover{background:var(--orange-dark)}
+.btn-msg{background:#fff;color:var(--orange);border:1.5px solid var(--orange);border-radius:8px;padding:9px 16px;font-size:.83rem;font-weight:600;transition:all .2s;white-space:nowrap}
+.btn-msg:hover{background:var(--orange-light)}
+
+/* Load more */
+.load-more-row{text-align:center;margin-top:20px}
+.btn-load-more{background:#fff;border:1.5px solid var(--gray2);color:var(--ink);border-radius:8px;padding:12px 36px;font-size:.88rem;font-weight:600;transition:all .2s}
+.btn-load-more:hover{border-color:var(--orange);color:var(--orange)}
+
+/* ═══════ STATS STRIP ═══════ */
+.stats-strip{background:#fff;border:1px solid var(--gray2);border-radius:var(--radius);padding:20px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}
+.stat-item{text-align:center;padding:0 12px}
+.stat-item+.stat-item{border-left:1px solid var(--gray2)}
+.stat-val{font-size:1.6rem;font-weight:700;color:var(--orange);display:block;line-height:1}
+.stat-label{font-size:.76rem;color:var(--gray4);margin-top:4px;line-height:1.4}
+
+/* ═══════ HOW IT WORKS ═══════ */
+.hiw-section{background:#fff;border:1px solid var(--gray2);border-radius:var(--radius);padding:24px;margin-bottom:20px}
+.hiw-title{font-size:1rem;font-weight:700;margin-bottom:20px}
+.hiw-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.hiw-step{text-align:center}
+.hiw-num{width:36px;height:36px;border-radius:50%;background:var(--orange);color:#fff;font-size:.9rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.hiw-step h4{font-size:.88rem;font-weight:700;margin-bottom:5px}
+.hiw-step p{font-size:.78rem;color:var(--gray4);line-height:1.55}
+.hiw-step-img{width:60px;height:60px;border-radius:50%;background:var(--orange-light);display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin:8px auto 0}
+
+/* ═══════ REVIEWS SECTION ═══════ */
+.reviews-section{background:#fff;border:1px solid var(--gray2);border-radius:var(--radius);padding:24px;margin-bottom:20px}
+.reviews-section-title{font-size:1rem;font-weight:700;margin-bottom:16px}
+.reviews-list{display:flex;flex-direction:column;gap:14px}
+.review-card{border:1px solid var(--gray2);border-radius:8px;padding:14px;transition:box-shadow .2s}
+.review-card:hover{box-shadow:var(--shadow)}
+.review-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.review-teacher-name{font-weight:700;font-size:.88rem;color:var(--orange)}
+.review-label{font-size:.72rem;color:var(--gray4)}
+.review-when{font-size:.72rem;color:var(--gray3)}
+.review-text{font-size:.83rem;color:var(--gray5);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.review-by{font-size:.75rem;color:var(--gray4);margin-top:6px;font-weight:500}
+
+/* ═══════ FAQ ═══════ */
+.faq-section{background:#fff;border:1px solid var(--gray2);border-radius:var(--radius);padding:24px;margin-bottom:20px}
+.faq-title{font-size:1rem;font-weight:700;margin-bottom:16px}
+.faq-item{border-bottom:1px solid var(--gray1);padding:14px 0}
+.faq-item:last-child{border-bottom:none;padding-bottom:0}
+.faq-q{font-size:.88rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--ink)}
+.faq-q:hover{color:var(--orange)}
+.faq-icon{font-size:1rem;color:var(--orange);flex-shrink:0;transition:transform .25s}
+.faq-icon.open{transform:rotate(45deg)}
+.faq-a{font-size:.83rem;color:var(--gray5);line-height:1.7;margin-top:10px;display:none}
+.faq-a.open{display:block}
+
+/* ═══════ BOTTOM CTA ═══════ */
+.bottom-cta{background:linear-gradient(135deg,var(--orange) 0%,var(--orange-mid) 100%);border-radius:var(--radius);padding:28px;text-align:center;color:#fff;margin-bottom:20px}
+.bottom-cta h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.bottom-cta p{font-size:.85rem;opacity:.9;margin-bottom:18px}
+.bottom-cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--orange);border:none;border-radius:30px;padding:11px 28px;font-size:.9rem;font-weight:700;transition:all .2s}
+.btn-white:hover{box-shadow:0 4px 16px rgba(0,0,0,.15);transform:translateY(-1px)}
+.btn-white-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);border-radius:30px;padding:11px 28px;font-size:.9rem;font-weight:600;transition:all .2s}
+.btn-white-outline:hover{background:rgba(255,255,255,.1)}
+
+/* ═══════ FOOTER ═══════ */
+footer{background:var(--ink);color:rgba(255,255,255,.6);padding:48px 5% 28px}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.footer-brand p{font-size:.8rem;line-height:1.7;max-width:240px;margin-top:12px}
+.footer-logo{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.footer-logo-icon{width:30px;height:30px;border-radius:6px;background:var(--orange);display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.footer-logo-text{font-weight:700;font-size:.95rem;color:#fff}
+.footer-col h4{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-bottom:14px}
+.footer-col ul{display:flex;flex-direction:column;gap:9px}
+.footer-col a{font-size:.82rem;color:rgba(255,255,255,.55);transition:color .2s}
+.footer-col a:hover{color:var(--orange)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;align-items:center;justify-content:space-between;font-size:.75rem}
+
+/* ═══════ MODAL ═══════ */
+.modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:16px;width:100%;max-width:440px;box-shadow:0 20px 60px rgba(0,0,0,.2);overflow:hidden;animation:mIn .3s cubic-bezier(.22,1,.36,1)}
+@keyframes mIn{from{opacity:0;transform:scale(.95) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-header{padding:20px 22px 0;display:flex;align-items:center;justify-content:space-between}
+.modal-header h2{font-size:1.25rem;font-weight:700}
+.modal-close{background:none;border:none;font-size:1.2rem;color:var(--gray4);cursor:pointer;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{background:var(--gray1)}
+.modal-tabs{display:flex;padding:16px 22px 0;border-bottom:1px solid var(--gray2)}
+.modal-tab{flex:1;padding:9px 0;font-size:.88rem;font-weight:600;background:none;border:none;color:var(--gray4);border-bottom:2.5px solid transparent;margin-bottom:-1px;cursor:pointer;transition:all .2s}
+.modal-tab.active{color:var(--orange);border-bottom-color:var(--orange)}
+.modal-body{padding:20px 22px 22px}
+.role-pick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.role-card{border:2px solid var(--gray2);border-radius:10px;padding:16px;cursor:pointer;text-align:center;transition:all .2s;background:#fff}
+.role-card:hover{border-color:var(--orange)}
+.role-card.selected{border-color:var(--orange);background:var(--orange-light)}
+.role-card .ri{font-size:1.8rem;margin-bottom:6px}
+.role-card .rn{font-weight:700;font-size:.88rem}
+.role-card .rd{font-size:.72rem;color:var(--gray4);margin-top:2px}
+.form-group{margin-bottom:13px}
+.form-group label{display:block;font-size:.74rem;font-weight:700;color:var(--gray4);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.form-control{width:100%;border:1.5px solid var(--gray2);border-radius:8px;padding:10px 13px;font-size:.9rem;outline:none;transition:border-color .2s;color:var(--ink)}
+.form-control:focus{border-color:var(--orange)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.modal-submit{width:100%;background:var(--orange);color:#fff;border:none;border-radius:8px;padding:13px;font-size:.93rem;font-weight:700;margin-top:6px;transition:background .2s}
+.modal-submit:hover{background:var(--orange-dark)}
+.modal-footer-txt{text-align:center;font-size:.78rem;color:var(--gray4);margin-top:12px}
+.modal-footer-txt a{color:var(--orange);font-weight:600}
+.social-divider{display:flex;align-items:center;gap:12px;margin:14px 0}
+.social-divider span{font-size:.75rem;color:var(--gray3);white-space:nowrap}
+.social-divider::before,.social-divider::after{content:'';flex:1;height:1px;background:var(--gray2)}
+.social-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.social-btn{border:1.5px solid var(--gray2);border-radius:8px;padding:9px;font-size:.8rem;font-weight:600;background:#fff;display:flex;align-items:center;justify-content:center;gap:5px;transition:border-color .2s}
+.social-btn:hover{border-color:var(--gray4)}
+
+/* toast */
+.toast{position:fixed;bottom:24px;right:24px;z-index:600;background:var(--ink);color:#fff;border-radius:10px;padding:12px 20px;font-size:.85rem;font-weight:600;box-shadow:0 6px 24px rgba(0,0,0,.2);display:flex;align-items:center;gap:8px;transform:translateY(80px);opacity:0;transition:all .35s cubic-bezier(.22,1,.36,1);pointer-events:none}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* ═══════ RESPONSIVE ═══════ */
+@media(max-width:960px){
+  .main-layout{grid-template-columns:1fr}
+  .filter-sidebar{position:static;display:none}
+  .filter-sidebar.mobile-open{display:block}
+  .nav-mid{display:none}
+  .nav-right{display:none}
+  .hamburger{display:flex}
+  .hiw-steps{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .hero h1{font-size:1.5rem}
+  .hero-search-box{flex-direction:column;border-radius:10px}
+  .hs-btn{padding:14px;border-radius:0 0 10px 10px}
+  .hs-divider{display:none}
+  .teacher-card{flex-direction:column}
+  .tc-photo{width:100%;min-height:unset;padding:20px 0 10px}
+  .tc-photo-inner{min-height:unset}
+  .tc-body{border-left:none;border-top:1px solid var(--gray2)}
+  .stats-strip{grid-template-columns:1fr}
+  .stat-item+.stat-item{border-left:none;border-top:1px solid var(--gray2)}
+  .footer-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .hero-proof{flex-direction:column;align-items:flex-start;gap:10px}
+  .proof-sep{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">🪷</div>
+    <div>
+      <div class="nav-logo-text">Sri Sri School of Yoga</div>
+      <div class="nav-logo-sub">Find Your Teacher</div>
+    </div>
+  </div>
+
+  <div class="nav-mid">
+    <div class="nav-search">
+      <input type="text" placeholder="Search yoga program or teacher…" id="navSearchInput" oninput="liveSearch()">
+      <button onclick="liveSearch()">Search</button>
+    </div>
+  </div>
+
+  <div class="nav-right">
+    <button class="btn-outline" onclick="openModal('login')">Log In</button>
+    <button class="btn-orange" onclick="openModal('signup')">Join Free</button>
+    <button class="btn-orange" style="border-radius:8px;padding:8px 16px;font-size:.8rem;" onclick="openModal('signup')">+ List as Teacher</button>
+  </div>
+
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#">🔍 Find Teachers</a>
+  <a href="#">🪷 Programs</a>
+  <a href="#">❓ How It Works</a>
+  <a href="#" onclick="openModal('signup')">👩‍🏫 Become a Teacher</a>
+  <div class="mobile-menu-actions">
+    <button class="btn-outline" onclick="openModal('login')">Log In</button>
+    <button class="btn-orange" onclick="openModal('signup')">Join Free</button>
+  </div>
+</div>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">🌍 12,000+ Certified Teachers · Around the Globe</div>
+    <h1>Sri Sri Yoga Classes Near Me<br>For Wellness & Inner Peace</h1>
+
+    <div class="hero-stats-row">
+      <div class="hero-stat-pill">🧘 Start your class today</div>
+      <div class="hero-stat-pill">🕒 Flexible timings</div>
+      <div class="hero-stat-pill">⭐ Classes from ₹499/hr</div>
+      <div class="hero-stat-pill">📍 12,093 verified teachers</div>
+    </div>
+
+    <div class="hero-search-box">
+      <div class="hs-field">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Program name (e.g. Hatha Yoga Sadhana, Corporate Yoga)" id="heroSearchInput" oninput="liveSearch()">
+      </div>
+      <div class="hs-divider"></div>
+      <div class="mode-toggle">
+        <button class="mode-btn active" id="modeNear" onclick="setMode('near')">📍 Near me</button>
+        <button class="mode-btn" id="modeOnline" onclick="setMode('online')">💻 Online</button>
+      </div>
+      <button class="hs-btn" onclick="liveSearch()">Search</button>
+    </div>
+  </div>
+
+  <div class="hero-proof">
+    <div class="proof-faces">
+      <div class="proof-face" style="background:#fff5ec;color:#e8600a">P</div>
+      <div class="proof-face" style="background:#fff0e0;color:#c84b00">R</div>
+      <div class="proof-face" style="background:#fff5ec;color:#e8600a">A</div>
+      <div class="proof-face" style="background:#fff0f5;color:#c8005e">K</div>
+      <div class="proof-face" style="background:#f5f8ff;color:#1a3a8b">V</div>
+    </div>
+    <div>
+      <div class="proof-stars">★★★★★</div>
+      <div style="font-size:.78rem;opacity:.85;margin-top:2px"><strong>Excellent (4.9)</strong> · 5 Million+ lives touched</div>
+    </div>
+    <div class="proof-sep"></div>
+    <div style="opacity:.85">97% of teachers offer their <strong>1st class free</strong></div>
+    <div class="proof-sep"></div>
+    <div style="opacity:.85">Ministry of Ayush / <strong>YCB Certified</strong></div>
+  </div>
+</section>
+
+<!-- ══════════ BREADCRUMB ══════════ -->
+<div class="breadcrumb">
+  <a href="#">SSSY</a><span>›</span>
+  <a href="#">Yoga</a><span>›</span>
+  <a href="#">India</a><span>›</span>
+  <span style="color:var(--ink);font-weight:500">Sri Sri Yoga Classes</span>
+</div>
+
+<!-- ══════════ MAIN LAYOUT ══════════ -->
+<div class="main-layout">
+
+  <!-- FILTER SIDEBAR -->
+  <aside class="filter-sidebar" id="filterSidebar">
+    <div class="filter-sidebar-header">
+      <h3>🎛 Filters</h3>
+      <button class="filter-clear-all" onclick="clearAll()">Clear all</button>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-section-title">Fee per Hour</div>
+      <div class="price-range-display">
+        <span>₹<span id="prMin">0</span></span>
+        <span>₹<span id="prMax">3000</span></span>
+      </div>
+      <input type="range" class="range-slider" min="0" max="3000" step="100" value="3000" id="priceSlider" oninput="updatePrice(this.value)">
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-section-title">Program</div>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Daily Sri Sri Yoga (Online)<span class="foption-count">1,840</span></label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Sri Sri Yoga Classes<span class="foption-count">2,400</span></label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Sri Sri Yoga Deep Dive<span class="foption-count">1,200</span></label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Hatha Yoga Sadhana L1<span class="foption-count">2,100</span></label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Hatha Yoga Sadhana L2<span class="foption-count">1,100</span></label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Sri Sri Lemurrian Yoga<span class="foption-count">680</span></label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Spine Care & Posture<span class="foption-count">920</span></label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Padmasadhana Instructor<span class="foption-count">600</span></label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Corporate Yoga<span class="foption-count">1,460</span></label>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-section-title">Minimum Rating</div>
+      <label class="rating-option"><input type="radio" name="rating" value="5" onchange="setRating(5)"><span class="rating-stars">★★★★★</span> 5.0 only</label>
+      <label class="rating-option"><input type="radio" name="rating" value="4" onchange="setRating(4)"><span class="rating-stars">★★★★</span>☆ 4.0+</label>
+      <label class="rating-option"><input type="radio" name="rating" value="0" checked onchange="setRating(0)">Any rating</label>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-section-title">Format</div>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Online (Video Call)<span class="foption-count">8,400</span></label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Face to Face<span class="foption-count">3,800</span></label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>At Home<span class="foption-count">2,400</span></label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>At Centre<span class="foption-count">3,100</span></label>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-section-title">Language</div>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>English</label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Hindi</label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Kannada</label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Tamil</label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Telugu</label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Malayalam</label>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-section-title">Experience</div>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>5+ years</label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>10+ years</label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>Ambassador Status</label>
+      <label class="filter-option"><input type="checkbox" onchange="applyFilters()"><div class="fcheck"></div>First class free</label>
+    </div>
+  </aside>
+
+  <!-- RIGHT COLUMN -->
+  <div>
+    <!-- STATS STRIP -->
+    <div class="stats-strip">
+      <div class="stat-item">
+        <span class="stat-val">4.9 ★</span>
+        <div class="stat-label">Average rating from<br>5 Million+ student reviews</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-val">₹1,199</span>
+        <div class="stat-label">Average fee for Sri Sri Yoga<br>classes per hour</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-val">&lt; 2 hrs</span>
+        <div class="stat-label">Teachers usually respond<br>within 2 hours</div>
+      </div>
+    </div>
+
+    <!-- RESULTS HEADER -->
+    <div class="results-header">
+      <div class="results-title">Sri Sri Yoga Teachers in India <span id="resultCount">(12 shown)</span></div>
+      <div class="sort-row">
+        Sort by:
+        <select class="sort-select" onchange="applyFilters()">
+          <option>Best Match</option>
+          <option>Highest Rated</option>
+          <option>Fee: Low to High</option>
+          <option>Fee: High to Low</option>
+          <option>Most Reviews</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- TEACHER LIST -->
+    <div class="teacher-list" id="teacherList"></div>
+    <div class="load-more-row">
+      <button class="btn-load-more" onclick="showToast('✅ Loading more teachers…')">See more teachers</button>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="hiw-section" style="margin-top:24px">
+      <div class="hiw-title">3 steps to find your ideal Sri Sri Yoga teacher</div>
+      <div class="hiw-steps">
+        <div class="hiw-step">
+          <div class="hiw-num">01</div>
+          <div class="hiw-step-img">🔍</div>
+          <h4>Choose</h4>
+          <p>Browse Sri Sri Yoga programs — Hatha Sadhana, Deep Dive, Daily Online, Spine Care, Corporate Yoga and more.</p>
+        </div>
+        <div class="hiw-step">
+          <div class="hiw-num">02</div>
+          <div class="hiw-step-img">💬</div>
+          <h4>Connect</h4>
+          <p>Find your certified SSSY teacher and arrange classes according to your schedule and requirements. First class is free.</p>
+        </div>
+        <div class="hiw-step">
+          <div class="hiw-num">03</div>
+          <div class="hiw-step-img">🚀</div>
+          <h4>Progress</h4>
+          <p>Begin your sadhana — online, at an Art of Living centre, or at home. Track your growth with your dedicated teacher.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="reviews-section">
+      <div class="reviews-section-title">Our students review their Sri Sri Yoga teacher</div>
+      <div class="reviews-list" id="reviewsList"></div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <div class="faq-title">FAQ</div>
+      <div id="faqList"></div>
+    </div>
+
+    <!-- BOTTOM CTA -->
+    <div class="bottom-cta">
+      <h3>Looking for a Personal Sri Sri Yoga Teacher Near You?</h3>
+      <p>Start your Sri Sri Yoga class in 3 clicks — 12,000+ certified teachers across India and the globe</p>
+      <div class="bottom-cta-btns">
+        <button class="btn-white" onclick="document.getElementById('heroSearchInput').focus()">See All Teachers</button>
+        <button class="btn-white-outline" onclick="openModal('signup')">List as Teacher — It's Free</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-icon">🪷</div>
+        <div class="footer-logo-text">Sri Sri School of Yoga</div>
+      </div>
+      <p>Rooted in the Himalayan tradition of Gurudev Sri Sri Ravi Shankar. Reaching 5 million+ lives through authentic yoga across 155+ countries.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="#">Daily Online Classes</a></li>
+        <li><a href="#">Hatha Yoga Sadhana</a></li>
+        <li><a href="#">Sri Sri Yoga Deep Dive</a></li>
+        <li><a href="#">Spine Care Program</a></li>
+        <li><a href="#">Corporate Yoga</a></li>
+        <li><a href="#">Padmasadhana</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>For Teachers</h4>
+      <ul>
+        <li><a href="#" onclick="openModal('signup')">List Your Profile</a></li>
+        <li><a href="#">Get Certified (SSSY)</a></li>
+        <li><a href="#">Teacher Resources</a></li>
+        <li><a href="#">Success Stories</a></li>
+        <li><a href="#">Teacher Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About SSSY</a></li>
+        <li><a href="#">Art of Living Foundation</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Sri Sri School of Yoga · Art of Living Foundation. All rights reserved.</span>
+    <span style="color:rgba(255,255,255,.3)">Made with 🙏 in Bengaluru</span>
+  </div>
+</footer>
+
+<!-- ══════════ AUTH MODAL ══════════ -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal">
+    <div class="modal-header"><h2 id="authTitle">Welcome back</h2><button class="modal-close" onclick="closeModal()">✕</button></div>
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tabLogin" onclick="switchTab('login')">Log In</button>
+      <button class="modal-tab" id="tabSignup" onclick="switchTab('signup')">Sign Up</button>
+    </div>
+    <div class="modal-body">
+      <div id="loginForm">
+        <div class="social-btns"><button class="social-btn">🇬 Google</button><button class="social-btn">📘 Facebook</button></div>
+        <div class="social-divider"><span>or with email</span></div>
+        <div class="form-group"><label>Email</label><input class="form-control" type="email" placeholder="you@example.com"></div>
+        <div class="form-group"><label>Password</label><input class="form-control" type="password" placeholder="••••••••"></div>
+        <button class="modal-submit" onclick="showToast('✅ Logged in!')">Log In</button>
+        <div class="modal-footer-txt"><a href="#">Forgot password?</a> · New here? <a href="#" onclick="switchTab('signup')">Sign up free</a></div>
+      </div>
+      <div id="signupForm" style="display:none">
+        <div class="role-pick">
+          <div class="role-card selected" onclick="pickRole(this)"><div class="ri">🧘</div><div class="rn">I'm a Student</div><div class="rd">Find a yoga teacher</div></div>
+          <div class="role-card" onclick="pickRole(this)"><div class="ri">🪷</div><div class="rn">I'm a Teacher</div><div class="rd">Teach & earn</div></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input class="form-control" type="text" placeholder="Ananda"></div>
+          <div class="form-group"><label>Last Name</label><input class="form-control" type="text" placeholder="Sharma"></div>
+        </div>
+        <div class="form-group"><label>Email</label><input class="form-control" type="email" placeholder="you@example.com"></div>
+        <div class="form-group"><label>Mobile</label><input class="form-control" type="tel" placeholder="+91 98765 43210"></div>
+        <div class="form-group"><label>Password</label><input class="form-control" type="password" placeholder="Min. 8 characters"></div>
+        <button class="modal-submit" onclick="showToast('🙏 Welcome to SSSY!')">Create Free Account</button>
+        <div class="modal-footer-txt">Already have an account? <a href="#" onclick="switchTab('login')">Log in</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════════════ DATA ═══════════════════════
+const teachers = [
+  {id:1,name:"Padma Iyer",city:"Bengaluru (online)",program:"Hatha Yoga Sadhana (Level 1)",tagline:"Yoga cultivates stillness and joy — transforming your life from the inside out, one breath at a time.",tags:["Hatha","Pranayama","Alignment"],rating:4.9,reviews:212,price:1200,free:true,bg:"#fff5ec",fg:"#e8600a",exp:"9 yrs",ambassador:true},
+  {id:2,name:"Rishi Kapoor",city:"Rishikesh (face to face & online)",program:"Sri Sri Yoga Deep Dive",tagline:"Immersive Deep Dive programs combining yoga, meditation, and Sudarshan Kriya for profound inner transformation.",tags:["Deep Dive","Meditation","Kriya"],rating:5.0,reviews:178,price:2000,free:true,bg:"#fff0e0",fg:"#c84b00",exp:"12 yrs",ambassador:true},
+  {id:3,name:"Ananda Devi",city:"Chennai (online)",program:"Sri Sri Padmasadhana Instructor",tagline:"Certified Padmasadhana Instructor Trainer — has trained 200+ teachers across India and Southeast Asia.",tags:["Padmasadhana","Instructor Training","Pranayama"],rating:5.0,reviews:143,price:1800,free:true,bg:"#fff0f5",fg:"#c8005e",exp:"14 yrs",ambassador:true},
+  {id:4,name:"Vikrant Sharma",city:"Mumbai (face to face & online)",program:"Spine Care Yoga & Posture Program",tagline:"Physiotherapist & SSSY teacher — fix back pain, correct posture & reduce stress. 1,000+ students rehabilitated.",tags:["Spine Care","Therapeutic","Posture"],rating:4.9,reviews:267,price:1500,free:true,bg:"#fff8f0",fg:"#b05000",exp:"8 yrs",ambassador:true},
+  {id:5,name:"Kavitha Reddy",city:"Hyderabad (online)",program:"Daily Sri Sri Yoga Classes (Online)",tagline:"Daily morning & evening online Sri Sri Yoga — 600+ consistent students. Warm, energetic, and precise.",tags:["Daily Yoga","Morning","Online"],rating:4.8,reviews:589,price:499,free:false,bg:"#fff5ec",fg:"#e8600a",exp:"7 yrs",ambassador:true},
+  {id:6,name:"Sudhir Nair",city:"Kochi (face to face & online)",program:"Sri Sri Yoga Classes",tagline:"Senior Art of Living teacher — deep grounding in yogic philosophy with weekly classes at the centre.",tags:["Classical Yoga","Suryanamaskar","Philosophy"],rating:4.9,reviews:198,price:900,free:true,bg:"#fff8f3",fg:"#c84b00",exp:"11 yrs",ambassador:true},
+  {id:7,name:"Preeti Joshi",city:"Pune (online)",program:"Hatha Yoga Sadhana (Level 2)",tagline:"Advanced Hatha Yoga specialist — subtle body awareness, bandhas, mudras, and pranic energy activation.",tags:["Advanced Hatha","Bandhas","Mudras"],rating:4.8,reviews:134,price:1400,free:true,bg:"#fff0e0",fg:"#b05000",exp:"10 yrs",ambassador:false},
+  {id:8,name:"Arjun Menon",city:"Bengaluru (face to face & online)",program:"Sri Sri Lemurrian Yoga",tagline:"One of only 80 certified Sri Sri Lemurrian Yoga teachers in India — rare ancient wisdom, accessible practice.",tags:["Lemurrian Yoga","Ancient Wisdom","Energy"],rating:5.0,reviews:76,price:2200,free:false,bg:"#fdf0ff",fg:"#7b2d8b",exp:"6 yrs",ambassador:false},
+  {id:9,name:"Sunita Verma",city:"Delhi (online & corporate)",program:"Corporate Yoga",tagline:"Former HR director — certified SSSY teacher designing wellness programs for Fortune 500 companies. 40+ corporate clients.",tags:["Stress Relief","Desk Yoga","Mindfulness"],rating:4.9,reviews:224,price:3000,free:true,bg:"#f5f8ff",fg:"#1a3a8b",exp:"7 yrs",ambassador:true},
+  {id:10,name:"Meera Krishnan",city:"Bengaluru (online)",program:"Sri Sri Yoga Deep Dive",tagline:"Leads weekend deep dive immersions combining yoga, meditation & Sudarshan Kriya for profound inner stillness.",tags:["Deep Dive","Sudarshan Kriya","Silence"],rating:4.9,reviews:165,price:1600,free:true,bg:"#fff5ec",fg:"#e8600a",exp:"9 yrs",ambassador:true},
+  {id:11,name:"Dhruv Agarwal",city:"Jaipur (face to face & online)",program:"Sri Sri Yoga Classes",tagline:"Community yoga teacher — warm, accessible teaching style for families and beginners. Home visits available.",tags:["Beginner","Family Yoga","Pranayama"],rating:4.7,reviews:112,price:700,free:true,bg:"#fff0e0",fg:"#c84b00",exp:"5 yrs",ambassador:false},
+  {id:12,name:"Lakshmi Prabhu",city:"Coimbatore (online)",program:"Hatha Yoga Sadhana (Level 1)",tagline:"Connects Level 1 Sadhana to yogic philosophy and the Tamil Siddha tradition. Graceful, precise, and deeply rooted.",tags:["Hatha","Siddha Yoga","Sanskrit"],rating:5.0,reviews:98,price:1100,free:true,bg:"#fff5ec",fg:"#e8600a",exp:"8 yrs",ambassador:false},
+];
+
+const reviews = [
+  {teacher:"Kavitha Reddy",label:"Daily Yoga Teacher",text:"Amazing yoga teacher — clear guidance, uplifting energy, and very effective sessions. She makes the class comfortable and easy to follow. Always feel relaxed and refreshed after her sessions.",by:"Meera",when:"12 hours ago"},
+  {teacher:"Padma Iyer",label:"Hatha Yoga Teacher",text:"She is a wonderful and dedicated teacher. Extremely patient, cheerful and deeply knowledgeable in the Sri Sri Yoga tradition. I highly recommend her to anyone beginning their yoga journey.",by:"Gurdarshan",when:"2 days ago"},
+  {teacher:"Vikrant Sharma",label:"Spine Care Teacher",text:"The Spine Care program completely changed my life. Years of chronic back pain reduced significantly within 8 weeks. Vikrant's approach is science-backed and incredibly compassionate.",by:"Suresh",when:"2 days ago"},
+  {teacher:"Rishi Kapoor",label:"Deep Dive Teacher",text:"The Deep Dive was a profoundly transformative experience. Rishi holds space with such grace and clarity. I came in with a restless mind and left with an open, still heart.",by:"Priya",when:"4 days ago"},
+  {teacher:"Sunita Verma",label:"Corporate Yoga Teacher",text:"Sunita designed a 6-week corporate wellness program for our 200-person team. The results were measurable — stress scores dropped and focus improved. Our team asks for more every quarter.",by:"HR Director, Infosys",when:"5 days ago"},
+  {teacher:"Ananda Devi",label:"Padmasadhana Teacher",text:"Ananda knows every nuance of Padmasadhana and explains the practice with remarkable clarity. She is kind, takes time to re-explain when needed, and her sessions are always deeply nourishing.",by:"Emmanuelle",when:"6 days ago"},
+];
+
+const faqs = [
+  {q:"💰 What is the average price of Sri Sri Yoga classes?",a:"The average price of Sri Sri Yoga classes on our platform is ₹1,199/hr. Prices range from ₹499/hr for daily online group sessions to ₹3,000/hr for specialised corporate or therapeutic programs. Fees depend on the teacher's experience, the program type (Hatha Sadhana, Deep Dive, Corporate etc.), and whether the class is online or in-person. 97% of our teachers offer their first class free."},
+  {q:"💡 How do I find a Sri Sri Yoga teacher near me?",a:"Use the search bar above to enter your city or enable 'Near me'. You can filter by program (Hatha Yoga Sadhana, Sri Sri Yoga Deep Dive, Spine Care, etc.), fee range, format (online or in-person), language, and rating. Browse teacher profiles, read verified student reviews, and message the teacher directly — all for free."},
+  {q:"💻 Can I learn Sri Sri Yoga online?",a:"Yes! Many of our certified SSSY teachers offer live online classes via Zoom, Google Meet, WhatsApp, or Skype. Simply select 'Online' in the search bar. Online classes are available for all programs including Daily Sri Sri Yoga, Hatha Yoga Sadhana Level 1 & 2, Deep Dive, Spine Care, and Corporate Yoga."},
+  {q:"🎓 What certifications do SSSY teachers hold?",a:"All teachers on this platform hold certification from the Sri Sri School of Yoga (SSSY), accredited by the Ministry of Ayush and the Yoga Certification Board (YCB) of India. Many are also internationally recognised by Yoga Alliance USA (200-hour or 500-hour RYT). Certified teachers carry the SSSY Verified badge on their profile."},
+  {q:"💡 Are there Sri Sri Yoga classes only for ladies?",a:"Yes — many of our teachers specifically offer women-only classes. Use the filter options or mention your preference when messaging a teacher. Classes are available for all life stages including prenatal yoga, postnatal recovery, and yoga for women's health."},
+  {q:"🏢 Can companies book Corporate Yoga sessions?",a:"Absolutely. We have 1,460+ teachers certified in Corporate Yoga — covering desk yoga, stress management, mindfulness at work, and team wellness programs. Teachers like Sunita Verma have worked with Fortune 500 companies. Contact us for group corporate pricing and customised wellness packages."},
+];
+
+let filteredTeachers = [...teachers];
+let maxPrice = 3000, minRating = 0;
+
+// ═══════════════════════ RENDER ═══════════════════════
+function renderTeachers() {
+  const list = document.getElementById('teacherList');
+  list.innerHTML = '';
+  filteredTeachers.forEach(t => {
+    const el = document.createElement('div');
+    el.className = 'teacher-card';
+    el.innerHTML = `
+      <div class="tc-photo">
+        <div class="tc-photo-inner" style="background:${t.bg}">
+          <div class="tc-avatar" style="background:${t.fg};color:#fff">${t.initials||t.name.charAt(0)}</div>
+          ${t.ambassador ? `<div class="tc-badge">⭐ Ambassador</div>` : ''}
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-top">
+          <div>
+            <div class="tc-name-row">
+              <span class="tc-name">${t.name}</span>
+            </div>
+            <div class="tc-city">📍 ${t.city}</div>
+          </div>
+          <div class="tc-rating-block">
+            <span class="tc-stars">${'★'.repeat(Math.floor(t.rating))}</span>
+            <span class="tc-rating-num">${t.rating}</span>
+            <span class="tc-reviews">(${t.reviews.toLocaleString()} reviews)</span>
+          </div>
+        </div>
+        <div style="font-size:.72rem;color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-top:2px">${t.program}</div>
+        <div class="tc-tagline">${t.tagline}</div>
+        <div class="tc-tags">${t.tags.map(tg=>`<span class="tc-tag">${tg}</span>`).join('')}</div>
+        <div class="tc-footer-row">
+          <div class="tc-price-block">
+            <div>
+              <div class="tc-price">₹${t.price.toLocaleString()}<span style="font-size:.75rem;font-weight:400;color:var(--gray4)">/hr</span></div>
+              ${t.free ? `<div class="tc-free">✓ 1st class free</div>` : ''}
+            </div>
+          </div>
+          <div class="tc-actions">
+            <button class="btn-msg" onclick="showToast('💬 Message sent to ${t.name}!')">Message</button>
+            <button class="btn-view" onclick="showToast('👩‍🏫 Opening ${t.name}\'s profile...')">View Profile</button>
+          </div>
+        </div>
+      </div>
+    `;
+    list.appendChild(el);
+  });
+  document.getElementById('resultCount').textContent = `(${filteredTeachers.length} shown)`;
+}
+
+function renderReviews() {
+  const list = document.getElementById('reviewsList');
+  reviews.forEach(r => {
+    const el = document.createElement('div');
+    el.className = 'review-card';
+    el.innerHTML = `
+      <div class="review-top">
+        <div><span class="review-teacher-name">${r.teacher}</span> <span class="review-label">· ${r.label}</span></div>
+        <div class="review-when">${r.when}</div>
+      </div>
+      <div class="review-text">${r.text}</div>
+      <div class="review-by">— ${r.by}</div>
+    `;
+    list.appendChild(el);
+  });
+}
+
+function renderFAQ() {
+  const list = document.getElementById('faqList');
+  faqs.forEach((f, i) => {
+    const el = document.createElement('div');
+    el.className = 'faq-item';
+    el.innerHTML = `
+      <div class="faq-q" onclick="toggleFaq(${i})">
+        <span>${f.q}</span>
+        <span class="faq-icon" id="faqIcon${i}">+</span>
+      </div>
+      <div class="faq-a" id="faqA${i}">${f.a}</div>
+    `;
+    list.appendChild(el);
+  });
+}
+
+function toggleFaq(i) {
+  const a = document.getElementById('faqA'+i);
+  const icon = document.getElementById('faqIcon'+i);
+  const open = a.classList.toggle('open');
+  icon.classList.toggle('open', open);
+}
+
+// ═══════════════════════ FILTERS ═══════════════════════
+function updatePrice(val) {
+  maxPrice = parseInt(val);
+  document.getElementById('prMax').textContent = val;
+  const pct = (val/3000)*100;
+  document.getElementById('priceSlider').style.background = `linear-gradient(to right,var(--orange) 0%,var(--orange) ${pct}%,var(--gray2) ${pct}%)`;
+  applyFilters();
+}
+
+function setRating(r) { minRating = r; applyFilters(); }
+
+function applyFilters() {
+  const q = (document.getElementById('heroSearchInput')?.value || document.getElementById('navSearchInput')?.value || '').toLowerCase();
+  filteredTeachers = teachers.filter(t =>
+    t.price <= maxPrice && t.rating >= minRating &&
+    (!q || t.name.toLowerCase().includes(q) || t.program.toLowerCase().includes(q) || t.tags.some(g => g.toLowerCase().includes(q)) || t.tagline.toLowerCase().includes(q))
+  );
+  renderTeachers();
+}
+
+function liveSearch() { applyFilters(); }
+
+function clearAll() {
+  maxPrice = 3000; minRating = 0;
+  document.getElementById('priceSlider').value = 3000;
+  document.getElementById('prMax').textContent = 3000;
+  document.getElementById('priceSlider').style.background = 'linear-gradient(to right,var(--orange) 0%,var(--orange) 100%,var(--gray2) 100%)';
+  document.querySelectorAll('.filter-option input[type=checkbox]').forEach(cb => cb.checked = false);
+  document.querySelector('input[name=rating][value="0"]').checked = true;
+  document.getElementById('heroSearchInput').value = '';
+  document.getElementById('navSearchInput').value = '';
+  filteredTeachers = [...teachers];
+  renderTeachers();
+}
+
+// ═══════════════════════ MODE TOGGLE ═══════════════════════
+function setMode(m) {
+  document.getElementById('modeNear').classList.toggle('active', m==='near');
+  document.getElementById('modeOnline').classList.toggle('active', m==='online');
+}
+
+// ═══════════════════════ AUTH MODAL ═══════════════════════
+function openModal(tab) {
+  switchTab(tab || 'login');
+  document.getElementById('authModal').classList.add('open');
+}
+function closeModal() { document.getElementById('authModal').classList.remove('open'); }
+function switchTab(tab) {
+  document.getElementById('loginForm').style.display = tab==='login' ? 'block' : 'none';
+  document.getElementById('signupForm').style.display = tab==='signup' ? 'block' : 'none';
+  document.getElementById('tabLogin').classList.toggle('active', tab==='login');
+  document.getElementById('tabSignup').classList.toggle('active', tab==='signup');
+  document.getElementById('authTitle').textContent = tab==='login' ? 'Welcome back' : 'Join Sri Sri School of Yoga';
+}
+function pickRole(el) { document.querySelectorAll('.role-card').forEach(r=>r.classList.remove('selected')); el.classList.add('selected'); }
+document.getElementById('authModal').addEventListener('click', e => { if(e.target===e.currentTarget) closeModal(); });
+
+// ═══════════════════════ MOBILE MENU ═══════════════════════
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('open');
+}
+
+// ═══════════════════════ TOAST ═══════════════════════
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ═══════════════════════ INIT ═══════════════════════
+renderTeachers();
+renderReviews();
+renderFAQ();
+</script>
+</body>
+</html>
